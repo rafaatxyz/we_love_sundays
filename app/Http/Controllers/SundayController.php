@@ -53,7 +53,7 @@ class SundayController extends Controller
         $sundaysCount = 0;
 
         while ($startDate <= $endDate) {
-            if ($startDate->format('w') == 0) {
+            if ($startDate->format('w') == 0 && $startDate->day < 28) {
                 $sundaysCount++;
             }
             $startDate->modify('+1 day');
